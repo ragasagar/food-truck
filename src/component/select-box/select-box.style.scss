@@ -1,0 +1,12 @@
+.select{
+    border:  2px solid gray;
+    -webkit-appearance: slider-vertical;
+    outline: none;
+    width: 130px;
+    margin-bottom: 30px;
+    height: 50px;
+
+    option{
+        height: 50px;
+    }
+}

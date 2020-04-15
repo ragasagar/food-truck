@@ -3,6 +3,7 @@ import "./homepage.style.scss";
 import TruckMap from '../../component/map/truck-map.component.jsx';
 import ApiCaller from '../../service/api-caller.service';
 import { SearchBox } from '../../component/search-box/search-box.component';
+import SelectBox from '../../component/select-box/select-box.component';
 
 
 class HomePage extends Component {
@@ -13,16 +14,18 @@ class HomePage extends Component {
             currentLocation: {
                 lat: 37.7749, lng: -122.4194
             },
-            searchInput: ""
+            searchInput: "",
+            selectValue: ""
         }
         this.apicaller = new ApiCaller();
+        this.truckRef = React.createRef();
     }
 
     componentDidMount() {
         this.getLocation();
         this.apicaller.fetchTrucks().then(response => this.setState({
             trucks: response
-        }))
+        }));
 
     }
 
@@ -49,6 +52,12 @@ class HomePage extends Component {
         })
     }
 
+    onSelect = (event) => {
+        this.setState({
+            selectValue: event.target.value
+        })
+    }
+
     distance = (lat1, lon1, lat2, lon2) => {
         var R = 6371; // km
         var dLat = this.toRad(lat2 - lat1);
@@ -69,18 +78,23 @@ class HomePage extends Component {
     }
 
     render() {
-        const { trucks, currentLocation, searchInput } = this.state
+        const { trucks, currentLocation, searchInput, selectValue } = this.state
         const filteredTrucks = trucks
             .filter(truck => truck.fooditems && truck.fooditems.toLowerCase().includes(searchInput.toLowerCase()))
-            .filter(truck => truck.facilitytype && truck.facilitytype === "Push Cart")
+            .filter(truck => truck.facilitytype && truck.facilitytype.toLowerCase().includes(selectValue.toLowerCase()))
             .filter(truck => this.distance(currentLocation.lat, currentLocation.lng, truck.latitude, truck.longitude) <= 2);
+        console.log("first", trucks)
+        console.log("second:", filteredTrucks)
+        return <div className="homepage">
+            <div className="search-food">
+                <SearchBox
+                    placeholder="Search Food Type"
+                    handleChange={this.handleChange} />
+                <SelectBox onChange={this.onSelect} />
+            </div>
+            <TruckMap trucks={filteredTrucks} location={currentLocation} ref={this.truckRef} />
 
-        return (<div className="homepage">
-            <SearchBox
-                placeholder="Search Food Type"
-                handleChange={this.handleChange} />
-            <TruckMap trucks={filteredTrucks} location={currentLocation} />
-        </div >)
+        </div >
     }
 }
 
