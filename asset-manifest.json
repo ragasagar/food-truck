@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/food-truck/static/css/main.6f626445.chunk.css",
-    "main.js": "/food-truck/static/js/main.4b67cacc.chunk.js",
-    "main.js.map": "/food-truck/static/js/main.4b67cacc.chunk.js.map",
-    "runtime-main.js": "/food-truck/static/js/runtime-main.29c1e834.js",
-    "runtime-main.js.map": "/food-truck/static/js/runtime-main.29c1e834.js.map",
-    "static/js/2.e6fc21b3.chunk.js": "/food-truck/static/js/2.e6fc21b3.chunk.js",
-    "static/js/2.e6fc21b3.chunk.js.map": "/food-truck/static/js/2.e6fc21b3.chunk.js.map",
-    "index.html": "/food-truck/index.html",
-    "precache-manifest.50d0de8a0102723d9bbdddeebd28a21c.js": "/food-truck/precache-manifest.50d0de8a0102723d9bbdddeebd28a21c.js",
-    "service-worker.js": "/food-truck/service-worker.js",
-    "static/css/main.6f626445.chunk.css.map": "/food-truck/static/css/main.6f626445.chunk.css.map",
-    "static/js/2.e6fc21b3.chunk.js.LICENSE.txt": "/food-truck/static/js/2.e6fc21b3.chunk.js.LICENSE.txt"
+    "main.css": "/foodhunt/static/css/main.6f626445.chunk.css",
+    "main.js": "/foodhunt/static/js/main.cd6b84e9.chunk.js",
+    "main.js.map": "/foodhunt/static/js/main.cd6b84e9.chunk.js.map",
+    "runtime-main.js": "/foodhunt/static/js/runtime-main.77688c64.js",
+    "runtime-main.js.map": "/foodhunt/static/js/runtime-main.77688c64.js.map",
+    "static/js/2.e1f101a2.chunk.js": "/foodhunt/static/js/2.e1f101a2.chunk.js",
+    "static/js/2.e1f101a2.chunk.js.map": "/foodhunt/static/js/2.e1f101a2.chunk.js.map",
+    "index.html": "/foodhunt/index.html",
+    "precache-manifest.c3af7fc3e36ab870a1e6cf7a3ca6f914.js": "/foodhunt/precache-manifest.c3af7fc3e36ab870a1e6cf7a3ca6f914.js",
+    "service-worker.js": "/foodhunt/service-worker.js",
+    "static/css/main.6f626445.chunk.css.map": "/foodhunt/static/css/main.6f626445.chunk.css.map",
+    "static/js/2.e1f101a2.chunk.js.LICENSE.txt": "/foodhunt/static/js/2.e1f101a2.chunk.js.LICENSE.txt",
+    "static/media/food-truck.png": "/foodhunt/static/media/food-truck.a94d6f07.png",
+    "static/media/push-cart.png": "/foodhunt/static/media/push-cart.94d7e2e8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.29c1e834.js",
-    "static/js/2.e6fc21b3.chunk.js",
+    "static/js/runtime-main.77688c64.js",
+    "static/js/2.e1f101a2.chunk.js",
     "static/css/main.6f626445.chunk.css",
-    "static/js/main.4b67cacc.chunk.js"
+    "static/js/main.cd6b84e9.chunk.js"
   ]
 }
