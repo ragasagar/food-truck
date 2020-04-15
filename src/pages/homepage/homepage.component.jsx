@@ -83,8 +83,6 @@ class HomePage extends Component {
             .filter(truck => truck.fooditems && truck.fooditems.toLowerCase().includes(searchInput.toLowerCase()))
             .filter(truck => truck.facilitytype && truck.facilitytype.toLowerCase().includes(selectValue.toLowerCase()))
             .filter(truck => this.distance(currentLocation.lat, currentLocation.lng, truck.latitude, truck.longitude) <= 2);
-        console.log("first", trucks)
-        console.log("second:", filteredTrucks)
         return <div className="homepage">
             <div className="search-food">
                 <SearchBox

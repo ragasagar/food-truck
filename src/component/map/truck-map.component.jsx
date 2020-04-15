@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import "./truck-map.style.scss"
 import { Map, Marker, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
+import truckImage from "../../img/food-truck.png";
+import cartImage from "../../img/push-cart.png";
 
 class TruckMap extends Component {
     constructor(props) {
-        console.log("my meddagge");
         super(props);
         this.state = {
             showWindow: false,
@@ -18,7 +19,6 @@ class TruckMap extends Component {
         }
     }
     render() {
-        console.log("Hello");
         return <div className="map-container">
             <Map
                 google={this.props.google}
@@ -37,14 +37,14 @@ class TruckMap extends Component {
                             onClick={this.onMarkerClick}
                             icon={
                                 d.facilitytype === 'Truck' ? new this.props.google.maps.MarkerImage(
-                                    "/assets/food-truck.png",
+                                    truckImage,
                                     null, /* size is determined at runtime */
                                     null, /* origin is 0,0 */
                                     null, /* anchor is bottom center of the scaled image */
                                     new window.google.maps.Size(25, 25)
                                 ) :
                                     new this.props.google.maps.MarkerImage(
-                                        "/assets/push-cart.png",
+                                        cartImage,
                                         null, /* size is determined at runtime */
                                         null, /* origin is 0,0 */
                                         null, /* anchor is bottom center of the scaled image */
