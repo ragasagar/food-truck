@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/food-truck/static/css/main.6f626445.chunk.css",
-    "main.js": "/food-truck/static/js/main.348b6654.chunk.js",
-    "main.js.map": "/food-truck/static/js/main.348b6654.chunk.js.map",
+    "main.js": "/food-truck/static/js/main.f72cab9e.chunk.js",
+    "main.js.map": "/food-truck/static/js/main.f72cab9e.chunk.js.map",
     "runtime-main.js": "/food-truck/static/js/runtime-main.29c1e834.js",
     "runtime-main.js.map": "/food-truck/static/js/runtime-main.29c1e834.js.map",
     "static/js/2.e6fc21b3.chunk.js": "/food-truck/static/js/2.e6fc21b3.chunk.js",
     "static/js/2.e6fc21b3.chunk.js.map": "/food-truck/static/js/2.e6fc21b3.chunk.js.map",
     "index.html": "/food-truck/index.html",
-    "precache-manifest.2c37e5d40a0fc2a6e42f831667c0a432.js": "/food-truck/precache-manifest.2c37e5d40a0fc2a6e42f831667c0a432.js",
+    "precache-manifest.120e857340a6e1df5fc7613de07259cc.js": "/food-truck/precache-manifest.120e857340a6e1df5fc7613de07259cc.js",
     "service-worker.js": "/food-truck/service-worker.js",
     "static/css/main.6f626445.chunk.css.map": "/food-truck/static/css/main.6f626445.chunk.css.map",
     "static/js/2.e6fc21b3.chunk.js.LICENSE.txt": "/food-truck/static/js/2.e6fc21b3.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.29c1e834.js",
     "static/js/2.e6fc21b3.chunk.js",
     "static/css/main.6f626445.chunk.css",
-    "static/js/main.348b6654.chunk.js"
+    "static/js/main.f72cab9e.chunk.js"
   ]
 }
