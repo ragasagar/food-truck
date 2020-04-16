@@ -5,7 +5,10 @@ import ApiCaller from '../../service/api-caller.service';
 import { SearchBox } from '../../component/search-box/search-box.component';
 import SelectBox from '../../component/select-box/select-box.component';
 
-
+/**
+ * The basecomponent page which have all the componet required for the application. 
+ * This component initiated all the state and fetch the data from the service.
+ */
 class HomePage extends Component {
     constructor() {
         super()
@@ -19,6 +22,7 @@ class HomePage extends Component {
         }
         this.apicaller = new ApiCaller();
         this.truckRef = React.createRef();
+        this.radiusThreshold = 2
     }
 
     componentDidMount() {
@@ -28,7 +32,9 @@ class HomePage extends Component {
         }));
 
     }
-
+    /**
+     * This method retrive the geo-location of users.
+     */
     getLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.setPositionState);
@@ -36,7 +42,10 @@ class HomePage extends Component {
             alert("Geolocation is not supported by this browser.");
         }
     }
-
+    /** 
+     * Set the geo-location value to currentLocation state. Due to lack of data, this value is not set.
+     * The SanFrancisco geo-location has been used.
+     */
     setPositionState = (position) => {
         // this.setState({
         //   location: {
@@ -46,18 +55,27 @@ class HomePage extends Component {
         // })
     }
 
+    /**
+     * Change the searchInput state when onChange event is triggered.
+     */
     handleChange = (event) => {
         this.setState({
             searchInput: event.target.value
         })
     }
 
+    /**
+     * Change the selectValue state when onChange event is triggered.
+     */
     onSelect = (event) => {
         this.setState({
             selectValue: event.target.value
         })
     }
 
+    /** 
+     * Calculate the distance between two geo-location co-ordinates.
+     */
     distance = (lat1, lon1, lat2, lon2) => {
         var R = 6371; // km
         var dLat = this.toRad(lat2 - lat1);
@@ -82,7 +100,7 @@ class HomePage extends Component {
         const filteredTrucks = trucks
             .filter(truck => truck.fooditems && truck.fooditems.toLowerCase().includes(searchInput.toLowerCase()))
             .filter(truck => truck.facilitytype && truck.facilitytype.toLowerCase().includes(selectValue.toLowerCase()))
-            .filter(truck => this.distance(currentLocation.lat, currentLocation.lng, truck.latitude, truck.longitude) <= 2);
+            .filter(truck => this.distance(currentLocation.lat, currentLocation.lng, truck.latitude, truck.longitude) <= this.radiusThreshold);
         return <div className="homepage">
             <div className="search-food">
                 <SearchBox

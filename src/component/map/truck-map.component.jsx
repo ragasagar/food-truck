@@ -4,6 +4,10 @@ import { Map, Marker, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
 import truckImage from "../../img/food-truck.png";
 import cartImage from "../../img/push-cart.png";
 
+/**
+ * Class Component which render the Map Component on the DOM. It takes value form the homepage component.
+ * Some other states are declared for Marker Component manipulation.
+ */
 class TruckMap extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +22,10 @@ class TruckMap extends Component {
             }
         }
     }
+
+    /**
+     * Render the TruckMap component. It includes the Map component from the google-map-react component.
+     */
     render() {
         return <div className="map-container">
             <Map
@@ -72,9 +80,15 @@ class TruckMap extends Component {
             </Map>
         </div >
     }
+    /**
+     * Parses the foodItems to display in pipe Format.
+     */
     parseFoodItem = (fooditems) => {
         return fooditems ? fooditems.split(":").join(" | ") : "";
     }
+    /**
+     * Set activesMarker to marker which triggered the event. It make InfoWindow render.
+     */
     onMarkerClick = (props, marker, e) => {
         this.setState({
             selectedPlace: props,
@@ -82,7 +96,9 @@ class TruckMap extends Component {
             showWindow: true
         });
     }
-
+    /**
+     * This closes the InfoWindow and change states.
+     */
     onClose = props => {
         if (this.state.showWindow) {
             this.setState({
@@ -91,11 +107,11 @@ class TruckMap extends Component {
             });
         }
     };
-
-    getIcon = (props) => {
-
-    }
 }
+
+/**
+ * This component uses HOC(Higher Order Component) i.e. GoogleApiWrapper to use 'google' properties. 
+ */
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyB7FLBGtiHmsV4pfleTY35haRoDEYcwlY4'
 })(TruckMap);
